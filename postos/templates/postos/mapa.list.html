@@ -1,0 +1,14 @@
+{% extends 'postos/base.html' %}
+
+{% block conteudo %}
+<h1>Lista de Mapas</h1>
+<ul>
+    {% for mapa in mapas %}
+        <li>
+            <a href="{% url 'mapa_view' %}?id={{ mapa.id }}">{{ mapa.nome }}</a> - {{ mapa.likes }} likes
+        </li>
+    {% empty %}
+        <p>Nenhum mapa encontrado.</p>
+    {% endfor %}
+</ul>
+{% endblock %}

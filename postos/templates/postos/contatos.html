@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contatos</title>
+    <link rel="stylesheet" href="{% static 'postos/styles.css' %}">
+</head>
+<body>
+    <h1>Contatos</h1>
+    <p>Entre em contato conosco:</p>
+    <ul>
+        <li>Telefone: (11) 1234-5678</li>
+        <li>E-mail: [contato@geomaps.com](mailto:contato@geomaps.com)</li>
+    </ul>
+    <a href="{% url 'home' %}">Voltar para home</a>
+</body>
+</html>

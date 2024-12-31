@@ -1,0 +1,9 @@
+{% if resultados %}
+    <ul>
+        {% for resultado in resultados %}
+            <li>{{ resultado.nome }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>{{ mensagens }}</p>
+{% endif %}

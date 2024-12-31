@@ -1,0 +1,75 @@
+{% extends 'postos/base.html' %}
+
+{% load static %}
+
+{% block title %}Geoprocessamento{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block conteudo %}
+    <div class="home-container">
+        <h1>Bem-vindo ao site Geomaps!</h1>
+        
+        {% if user.is_authenticated %}
+            <h2>Olá, {{ user.username }}! Estamos felizes em tê-lo de volta.</h2>
+        {% else %}
+            <h2>Faça login para acessar recursos exclusivos.</h2>
+            <a href="{% url 'login' %}" class="btn-login">Clique aqui para fazer login</a>
+        {% endif %}
+        
+        <!-- Seção de Notícias -->
+        <section class="noticias">
+            <h3>GeoProcessamento</h3>
+            <ul>
+                <li><a href="#">Nova atualização de dados no mapa</a></li>
+                <li><a href="#">Novos serviços de geoprocessamento lançados</a></li>
+                <li><a href="#">Inscreva-se no nosso workshop sobre Geotecnologias</a></li>
+            </ul>
+        </section>
+
+        <!-- Seção de Imagens (Galeria) -->
+        <section class="galeria-imagens">
+            <h3>Imagens em Destaque</h3>
+            <h3>imagens ficticia demostração</h3>
+            <div class="imagens-grid">
+                {% for imagem in imagens %}
+                    <div class="imagem-item">
+                        <img src="{{ imagem.photo.url }}" alt="Imagem {{ forloop.counter }}" class="imagem-destaque">
+                    </div>
+                {% empty %}
+                    <p>Nenhuma imagem disponível no momento.</p>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Seção de Destaques -->
+        <section class="destaques">
+            <h3>Explore nossas seções</h3>
+            <div class="destaque">
+                <h4><a href="{% url 'mapa' %}">Mapa</a></h4>
+                <p>Visualize dados geoespaciais interativos em nosso mapa.</p>
+            </div>
+            <div class="destaque">
+                <h4><a href="{% url 'galeria' %}">Galeria</a></h4>
+                <p>Confira as imagens e visualizações de nossos projetos.</p>
+            </div>
+            <div class="destaque">
+                <h4><a href="{% url 'servicos' %}">Serviços</a></h4>
+                <p>Saiba mais sobre os serviços oferecidos pelo nosso time.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Seção de Busca -->
+    <section class="busca">
+        <h3>Busca de Conteúdo</h3>
+        <form method="GET" action="{% url 'busca' %}">
+            <input type="text" name="q" placeholder="Digite o que deseja buscar..." required>
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
+    
+    {% include 'postos/rodape.html' %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'postos/base.html' %}
+
+{% block conteudo %}
+    <h1>Serviços</h1>
+    <p>Oferecemos os seguintes serviços:</p>
+    <ul>
+        <li>Análise de dados geográficos: Realizamos uma avaliação detalhada de informações geográficas, utilizando ferramentas avançadas de geoprocessamento para ajudar na tomada de decisões e identificar padrões espaciais relevantes.</li>
+        <li>Criação de mapas personalizados: Desenvolvemos mapas personalizados e visualmente impactantes, ajustados às suas necessidades específicas, para representar dados geográficos de forma clara e objetiva.</li>
+        <li>Desenvolvimento de aplicações GIS: Criamos soluções inovadoras em Sistemas de Informação Geográfica (GIS) para integrar, analisar e visualizar dados geoespaciais, otimizando processos e operações.</li>
+        <li>Análise de impacto ambiental: Fornecemos análises detalhadas sobre os impactos ambientais em áreas específicas, auxiliando em estudos de viabilidade, planejamento e licenciamento ambiental.</li>
+        <li>Consultoria em geoprocessamento: Oferecemos suporte especializado para a implementação de tecnologias e metodologias de geoprocessamento, aprimorando a gestão e análise de informações espaciais.</li>
+    </ul>
+    <p>Entre em contato conosco para saber mais!</p>
+
+    <h2>Serviços indisponíveis</h2>
+    <ul>
+        {% for servico in servicos %}
+            <li>{{ servico.nome }}: {{ servico.descricao }}</li>
+        {% empty %}
+            <p>Nenhum serviço encontrado.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

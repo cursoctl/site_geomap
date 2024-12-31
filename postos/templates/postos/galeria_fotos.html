@@ -1,0 +1,22 @@
+{% extends 'postos/base.html' %}
+
+{% load static %}
+{% block conteudo %}
+<section class="galeria">
+    <h1>Galeria de Imagens</h1>
+    <div class="image-grid">
+        {% for imagem in imagens %}
+            <div class="image-card">
+                {% if imagem.photo %}
+                    <img src="{{ imagem.photo.url }}" alt="{{ imagem.photo.name }}">
+                    <h2>{{ imagem.photo.name|default:"Sem título" }}</h2>
+                {% else %}
+                    <p>Imagem indisponível</p>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>Não há imagens disponíveis na galeria no momento.</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

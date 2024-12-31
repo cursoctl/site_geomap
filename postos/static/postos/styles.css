@@ -1,0 +1,301 @@
+/* Variáveis Globais */
+:root {
+  --cor-principal: #ffffff; /* Cor principal do tema */
+  --cor-secundaria: #e7910f; /* Cor secundária do tema */
+  --cor-fundo: #000000b6; /* Cor de fundo do site */
+  --cor-texto: #000000c4; /* Cor padrão do texto */
+  --cor-destaque: #e7890d; /* Cor usada para destaques */
+}
+
+/* Estilização global */
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif; /* Fonte padrão */
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; /* Rolagem suave */
+  background-color: var(--cor-fundo); /* Cor de fundo do corpo */
+  color: var(--cor-texto); /* Cor do texto */
+}
+
+img {
+  width: 1200px; /* Largura total da imagem */
+  height: 1000px; /* Altura fixa */
+  object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+  border-radius: 300px; /* Bordas levemente arredondadas */
+  transition: transform 0.3s ease; /* Transição suave no hover */
+}
+
+img:hover {
+  transform: scale(1.00); /* Aumenta ligeiramente a imagem ao passar o mouse */
+}
+
+a {
+  text-decoration: none; /* Remove sublinhado dos links */
+  color: var(--cor-principal); /* Cor padrão do link */
+  transition: color 0.3s ease; /* Transição suave na cor */
+}
+
+a:hover {
+  color: var(--cor-secundaria); /* Cor do link ao passar o mouse */
+}
+
+/* Estilo do cabeçalho */
+header {
+  text-align: center; /* Centraliza o texto */
+  padding: 30px; /* Espaçamento interno */
+  background-color: var(--cor-principal); /* Fundo do cabeçalho */
+  color: var(--cor-destaque); /* Cor do texto */
+  border-bottom: 3px solid var(--cor-secundaria); /* Linha de destaque inferior */
+}
+
+h1 {
+  margin: 0; /* Remove espaçamento externo */
+  font-size: 2rem; /* Tamanho da fonte */
+  animation: fadeIn 1s ease-in-out; /* Animação de aparecer */
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Invisível no início */
+  }
+  to {
+    opacity: 1; /* Visível no final */
+  }
+}
+
+/* Estilo do conteúdo principal */
+.home-container {
+  margin: 20px auto; /* Espaçamento e centralização */
+  max-width: 1200px; /* Largura máxima */
+  text-align: center; /* Centraliza o texto */
+}
+
+.content {
+  padding: 30px 20px; /* Espaçamento interno */
+  max-width: 1200px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza */
+}
+
+.noticias {
+  margin: 20px auto; /* Centraliza o bloco */
+  padding: 10px; /* Espaçamento interno */
+  background-color: #00000048; /* Fundo com transparência */
+  border: 2.5px solid #006435; /* Borda verde */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.274); /* Sombra leve */
+  width: 65%; /* Largura fixa */
+  text-align: center; /* Centraliza o texto */
+}
+
+.noticias ul {
+  list-style: none; /* Remove marcadores de lista */
+  padding: 0; /* Remove espaçamento interno */
+}
+
+.noticias li {
+  margin: 10px 0; /* Espaçamento entre itens */
+  padding: 10px; /* Espaçamento interno */
+  background-color: #01613c; /* Fundo dos itens */
+  color: var(--cor-principal); /* Cor do texto */
+  border-radius: 5px; /* Bordas arredondadas */
+  box-shadow: 0 4px 6px rgba(80, 78, 78, 0.1); /* Sombra leve */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+.noticias li:hover {
+  transform: scale(1.05); /* Aumenta ao passar o mouse */
+  box-shadow: 0 8px 20px rgb(2, 151, 27); /* Sombra mais forte */
+}
+
+/* Galeria de imagens */
+.galeria-imagens {
+  margin-top: 100px; /* Espaçamento superior */
+}
+
+.imagens-grid {
+  display: flex; /* Layout flexível */
+  flex-wrap: wrap; /* Permite quebra de linha */
+  gap: 10px; /* Espaçamento entre itens */
+  justify-content: center; /* Centraliza os itens */
+}
+
+.imagem-item {
+  flex: 1 1 calc(33.33% - 10px); /* Responsivo para 3 colunas */
+  max-width: calc(33.33% - 10px); /* Largura máxima */
+}
+
+.imagem-item img {
+  width: 100%; /* Largura total */
+  height: auto; /* Proporção automática */
+  object-fit: cover; /* Ajusta a imagem ao espaço */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: transform 0.3s ease; /* Transição suave */
+}
+
+.imagem-item img:hover {
+  transform: scale(1.8); /* Aumenta ligeiramente ao passar o mouse */
+}
+
+/* Destaques */
+.destaques {
+  margin-top: 10px; /* Espaçamento superior */
+}
+
+.destaque {
+  margin: 100px 0; /* Espaçamento entre itens */
+}
+
+/* Barra de busca */
+.busca form {
+  margin-top: 50px; /* Espaçamento superior */
+}
+
+.busca input {
+  padding: 10px; /* Espaçamento interno */
+  width: 300px; /* Largura do campo */
+  border: 1px solid #ccc; /* Borda cinza */
+  border-radius: 5px; /* Bordas arredondadas */
+}
+
+.busca button {
+  padding: 10px 15px; /* Espaçamento interno */
+  background-color: #007bff; /* Cor do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de mão */
+}
+
+.busca button:hover {
+  background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+/* Botão de login */
+.btn-login {
+  display: inline-block; /* Botão como bloco inline */
+  padding: 10px 20px; /* Espaçamento interno */
+  background-color: #28a745; /* Fundo verde */
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */
+  border-radius: 5px; /* Bordas arredondadas */
+  margin-top: 10px; /* Espaçamento superior */
+}
+
+.btn-login:hover {
+  background-color: #218838; /* Fundo mais escuro ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+  text-align: center; /* Centraliza o texto */
+  padding: 20px; /* Espaçamento interno */
+  background-color: var(--cor-principal); /* Fundo */
+  color: var(--cor-texto); /* Cor do texto */
+  font-size: 0.9rem; /* Tamanho da fonte */
+  border-top: 3px solid var(--cor-secundaria); /* Linha de destaque superior */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    padding: 20px; /* Reduz o espaçamento */
+  }
+
+  h1 {
+    font-size: 2rem; /* Reduz o tamanho da fonte */
+  }
+
+  .content {
+    padding: 15px; /* Ajusta o espaçamento */
+  }
+
+  .imagens-grid {
+    gap: 80px; /* Ajusta o espaço entre itens */
+  }
+
+  .imagem-item {
+    flex: 1 1 calc(50% - 20px); /* Responsivo para 2 colunas */
+    max-width: calc(50% - 20px); /* Ajusta largura máxima */
+  }
+}
+
+@media (max-width: 250px) {
+  header {
+    padding: 10px; /* Reduz ainda mais o espaçamento */
+  }
+
+  h1 {
+    font-size: 1.0rem; /* Fonte menor */
+  }
+
+  .content {
+    padding: 100px; /* Ajusta o espaçamento */
+  }
+
+  .imagens-grid {
+    gap: 7px; /* Espaço reduzido */
+  }
+
+  .imagem-item {
+    flex: 1 1 10%; /* Ajuste para 2 colunas */
+    max-width: 10%; /* Largura fixa */
+  }
+}
+
+.home .imagem-item img {
+  width: 10%; /* Ajuste adicional para imagens na home */
+  height: auto;
+}
+
+.destaque .imagem-item img {
+  width: 10%; /* Ajuste para imagens de destaque */
+  height: auto;
+}
+.rodape {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.rodape .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rodape .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rodape .col-md-4 {
+  flex-basis: 30%;
+}
+
+.rodape ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rodape li {
+  margin-bottom: 10px;
+}
+
+.rodape a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  color: #ccc;
+}
+
+.copyright {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  clear: both;
+}

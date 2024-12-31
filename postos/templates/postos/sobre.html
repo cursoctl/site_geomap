@@ -1,0 +1,33 @@
+{% extends 'postos/base.html' %}
+
+{% block title %}Sobre Nós{% endblock %}
+
+{% block conteudo %}
+    <section class="sobre">
+        <h1>Sobre Nós</h1>
+        <p>Breve apresentação da empresa</p>
+        <img src="{% static 'img/logo_empresa.jpg' %}" alt="Logo da Empresa">
+    </section>
+
+    <section class="historia">
+        <h2>Nossa História</h2>
+        <p>Breve história da empresa</p>
+        <img src="{% static 'img/imagem_historia.jpg' %}" alt="Imagem da História">
+    </section>
+
+    <section class="equipe">
+        <h2>Nossa Equipe</h2>
+        <ul>
+            <li>
+                <img src="{% static 'img/foto_equipe1.jpg' %}" alt="Foto da Equipe 1">
+                <p>Nome do Membro da Equipe 1</p>
+            </li>
+            <li>
+                <img src="{% static 'img/foto_equipe2.jpg' %}" alt="Foto da Equipe 2">
+                <p>Nome do Membro da Equipe 2</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Outras seções... -->
+{% endblock %}
