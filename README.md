@@ -15,3 +15,6 @@ outros
 - Django 3.x
 - PostgreSQL + PostGIS
 - Leaflet.js
+
+- sistema em processo de melhorias continuas.
+- ainda em desenvolvimento de mais funcionalidades.
